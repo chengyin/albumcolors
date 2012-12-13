@@ -9,7 +9,7 @@
 					return;
 				}
 
-				$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=' + username + '&api_key=09a22381ce7a9913af88204c5c12bf04&format=json&callback=?', function(data) {
+				$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=' + username + '&api_key=' + window.LASTFM_APP_KEY + '&format=json&callback=?', function(data) {
 					if (data.topalbums) {
 						callback(data.topalbums.album);
 					}
