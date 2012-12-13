@@ -85,15 +85,6 @@
 		}
 	}
 
-	function initForm() {
-		$('#lastfm-username-form').submit(function() {
-			var username = $('#lastfm-username').val();
-			lastfm.getUserTopAlbums(username, renderAlbums);
-
-			return false;
-		});
-	}
-
 	function initTemplate() {
 		$template = $('#template');
 		$template.attr('id', '');
@@ -106,12 +97,11 @@
 		param = param.replace('lastfm=', '');
 		if (param.length) {
 			$('#lastfm-username').val(param);
-			$('#lastfm-username-form').submit();
+			lastfm.getUserTopAlbums(param, renderAlbums);
 		}
 	}
 
 	function init() {
-		initForm();
 		initTemplate();
 		initGet();
 	}
