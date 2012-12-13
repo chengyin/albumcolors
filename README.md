@@ -27,4 +27,4 @@ same-origin rule. In the last.fm example, a simple image proxy is
 included to bypass the issue.
 	
 ## License
-	[University of Illinois NCSA](http://opensource.org/licenses/NCSA)
+[University of Illinois / NCSA](http://opensource.org/licenses/NCSA)
