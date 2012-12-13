@@ -1,6 +1,10 @@
 (function() {
 	var colorChooser, AlbumImage, AlbumColors;
 
+
+	/* colorChooser
+	 * A series of function that is used to pick up 3 colors among 10 dominating colors
+	 */
 	colorChooser = {
 		colorStringToRGBArray: function(colorString) {
 			var n, arr = colorString.split(',');
@@ -69,6 +73,11 @@
 		}
 	};
 
+
+	/*
+	 * A Class for the to wrap image,
+	 * used for counting raw color pixels
+	 */
 	AlbumImage = function(url) {
 		this.url = url;
 	};
@@ -123,7 +132,10 @@
 
 
 
-
+	/*
+	 * AlbumColors
+	 * Generate pallete among dominating colors
+	 */
 	AlbumColors = function(imageUrl) {
 		this.imageUrl = imageUrl;
 		this.image = new AlbumImage(imageUrl);
@@ -144,10 +156,12 @@
 	};
 
 	AlbumColors.prototype.getBucket = function(color) {
+		// Throw a color into one color bucket
 		var bucket = [],
 			c;
 
 		for (c = 0; c < color.length; c++) {
+			// Naive
 			bucket[c] = Math.round(color[c] / 64) * 64;
 		}
 
@@ -232,6 +246,8 @@
 
 		return this.mainColors.slice(0, count);
 	};
+
+	AlbumColors.AlbumImage = AlbumImage;
 
 	window.AlbumColors = AlbumColors;
 }());
