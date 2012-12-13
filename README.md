@@ -2,14 +2,11 @@
 
 ![Screenshot](http://chengyin.github.com/albumcolors/screenshot.png)
 
-A JavaScript script to pick 3 colors from an image to create a pallete for
-background and text colors. Inspired by iTunes 11.
+A JavaScript script to pick 3 colors from an image to create a palette for background and text colors. Inspired by iTunes 11.
 
 ## Examples
 
-[Hosted example](http://albumcolors.chengyinliu.com/examples/lastfm?lastfm=willowm)
-showing album info generated from users' last.fm. Try it with your own
-username for different results.
+[Hosted example](http://albumcolors.chengyinliu.com/examples/lastfm?lastfm=willowm) showing album info generated from users' last.fm. Try it with your own username for different results.
 
 ## How to Use
 
@@ -30,15 +27,13 @@ The algorithm is simple.
  
 2. Find n (default 10) major colors from the pixel array (`AlbumColors`)
 
-	2.1. Divide color spectum into 64 buckets
+	2.1. Divide color spectrum into 64 buckets
 
-	2.2. Add each color into one of the bucket with a simple
-	approximation
+	2.2. Add each color into one of the bucket with a simple approximation
 
 	2.3. Take the 10 buckets with the largest number of colors in them
 
-	2.4. Averaging the colors in the dominating buckets to get the presenting color
-	for the buckets
+	2.4. Averaging the colors in the dominating buckets to get the presenting color for the buckets
 
 3. Among the 10 major colors, pick out 3 (`colorChooser`)
 
@@ -46,17 +41,13 @@ The algorithm is simple.
 
 	3.2. The most dominating color (ColorA) will be the background
 
-	3.3. The color that is most distanced from ColorA, ColorB, will be
-	text color 1
+	3.3. The color that is most distanced from ColorA, ColorB, will be text color 1
 
-	3.4. The color that is second distanced form ColorA, ColorC, will be
-	text color 2
+	3.4. The color that is second distanced form ColorA, ColorC, will be text color 2
 
 ## Limitations
 
-Images are loaded through `canvas`, therefore we are limited to the
-same origin rule. In the last.fm example, a simple image proxy is
-included to bypass the issue.
+Images are loaded through `canvas`, therefore we are limited to the same origin rule. In the last.fm example, a simple image proxy is included to bypass the issue.
 	
 ## License
 
