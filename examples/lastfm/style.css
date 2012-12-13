@@ -1,0 +1,45 @@
+#lastfm-username-form {
+	text-align: center;
+}
+
+#lastfm-username-form input {
+	font-size: 16px;
+	text-align: center;
+	width: 200px;
+}
+
+ul#albums {
+	list-style-type: none;
+}
+
+li.album {
+	display: inline-block;
+	margin: 16px;
+	min-height: 150px;
+	padding-right: 140px;
+	position: relative;
+	width: 200px;
+}
+
+li.album .cover {
+	bottom: 0;
+	max-height: 125px;
+	max-width: 125px;
+	position: absolute;
+	right: 0;
+}
+
+.gradient {
+	bottom: 0;
+	height: 125px;
+	position: absolute;
+	right: 0;
+	width: 125px;
+}
+
+li.album p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 16px;
+}
