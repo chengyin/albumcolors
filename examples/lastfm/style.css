@@ -1,3 +1,7 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
 #lastfm-username-form {
 	text-align: center;
 }
@@ -19,6 +23,10 @@ li.album {
 	padding-right: 140px;
 	position: relative;
 	width: 200px;
+}
+
+li.album {
+	font-weight: bold;
 }
 
 li.album .cover {
