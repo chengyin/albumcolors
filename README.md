@@ -1,6 +1,6 @@
 # AlbumColors.js
 
-![Screenshot](screenshot.png)
+![Screenshot](http://chengyin.github.com/albumcolors/screenshot.png)
 
 A script to pick 3 colors from an image to create a pallete for
 background and text colors. Inspired by iTunes 11.
