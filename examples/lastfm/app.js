@@ -10,8 +10,10 @@
 				}
 
 				$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=' + username + '&api_key=' + window.LASTFM_APP_KEY + '&format=json&callback=?', function(data) {
-					if (data.topalbums) {
+					if (data.topalbums.album) {
 						callback(data.topalbums.album);
+					} else {
+						alert('Cannot read user album data from last.fm');
 					}
 				});
 			}
