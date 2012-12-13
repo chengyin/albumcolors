@@ -12,6 +12,7 @@ showing album info generated from users' last.fm. Try it with your own
 username for different results.
 
 ## How to Use
+
 	var url = 'http://www.google.com/images/srpr/logo3w.png',
 		// You will need a image hosted under the same domain as the script
 		albumColors = new AlbumColors(url);
@@ -22,21 +23,33 @@ username for different results.
 	});
 
 ## Algorithm
+
 The algorithm is simple.
+
 1. Load image from URL into canvas and get the color array by pixels (`AlbumImage`)
+ 
 2. Find n (default 10) major colors from the pixel array (`AlbumColors`)
+
 	2.1. Divide color spectum into 64 buckets
+
 	2.2. Add each color into one of the bucket with a simple
 	approximation
+
 	2.3. Take the 10 buckets with the largest number of colors in them
+
 	2.4. Averaging the colors in the dominating buckets to get the presenting color
 	for the buckets
+
 3. Among the 10 major colors, pick out 3 (`colorChooser`)
+
 	3.1. Color distance is simply defined as the Euclidean distance
-	3.1. The most dominating color (ColorA) will be the background
-	3.2. The color that is most distanced from ColorA, ColorB, will be
+
+	3.2. The most dominating color (ColorA) will be the background
+
+	3.3. The color that is most distanced from ColorA, ColorB, will be
 	text color 1
-	3.3. The color that is second distanced form ColorA, ColorC, will be
+
+	3.4. The color that is second distanced form ColorA, ColorC, will be
 	text color 2
 
 ## Limitations
@@ -46,4 +59,5 @@ same origin rule. In the last.fm example, a simple image proxy is
 included to bypass the issue.
 	
 ## License
+
 [University of Illinois / NCSA](http://opensource.org/licenses/NCSA)
