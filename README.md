@@ -19,6 +19,12 @@ username for different results.
 		console.log(colors);
 		// Result: [[254, 254, 254], [2, 138, 14], [4, 171, 21]]
 	});
+
+## Limitations
+
+Images are loaded through `canvas`, therefore we are limited to the
+same-origin rule. In the last.fm example, a simple image proxy is
+included to bypass the issue.
 	
 ## License
 	[University of Illinois/NCSA] (http://opensource.org/licenses/NCSA)
