@@ -7,7 +7,7 @@ background and text colors. Inspired by iTunes 11.
 
 ## Examples
 
-[Hosted example] (http://albumcolors.chengyinliu.com/examples/lastfm?lastfm=willowm)
+[Hosted example](http://albumcolors.chengyinliu.com/examples/lastfm?lastfm=willowm)
 showing album info generated from users' last.fm. Try it with your own
 username for different results.
 
@@ -27,4 +27,4 @@ same-origin rule. In the last.fm example, a simple image proxy is
 included to bypass the issue.
 	
 ## License
-	[University of Illinois/NCSA] (http://opensource.org/licenses/NCSA)
+	[University of Illinois NCSA](http://opensource.org/licenses/NCSA)
