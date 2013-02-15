@@ -104,6 +104,8 @@
 		var canvas, context;
 
 		canvas = document.createElement('canvas');
+		canvas.width = this.image.width;
+		canvas.height = this.image.height;
 		context = canvas.getContext('2d');
 
 		context.drawImage(this.image, 0, 0);
