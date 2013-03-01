@@ -40,7 +40,6 @@ To get as a color result more suitable for css styling:
       		}
       		console.log("Color Result:",colorsInStringArray);
       		// Color Result: ["rgb(254, 254, 254)", "rgb(2, 138, 14)", "rgb(4, 171, 21)"]
-      		return colorsInStringArray;
       	});
 
 ## Algorithm
