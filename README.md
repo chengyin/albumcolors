@@ -9,15 +9,39 @@ A JavaScript script to pick 3 colors from an image to create a palette for backg
 [Hosted example](http://albumcolors.chengyinliu.com/examples/lastfm?lastfm=willowm) showing album info generated from users' last.fm. Try it with your own username for different results.
 
 ## How to Use
+Initiate:
 
 	var url = 'http://www.google.com/images/srpr/logo3w.png',
-		// You will need a image hosted under the same domain as the script
-		albumColors = new AlbumColors(url);
+	// You will need a image hosted under the same domain as the script
+	albumColors = new AlbumColors(url);	
+
+To get as a color result: 
+[[254, 254, 254], [2, 138, 14], [4, 171, 21]]
 
 	albumColors.getColors(function(colors) {
 		console.log(colors);
-		// Result: [[254, 254, 254], [2, 138, 14], [4, 171, 21]]
+		// Color Result: [[254, 254, 254], [2, 138, 14], [4, 171, 21]]
 	});
+	
+To get as a color result more suitable for css styling: 
+["rgb(254, 254, 254)", "rgb(2, 138, 14)", "rgb(4, 171, 21)"]
+
+	albumColors.getColors(function(colors) {
+      		var colorsInStringArray = [];
+      		if(colors){
+        		for(var i = 0; i <= 2; ++i){
+          			var tempString = "", temp = "";
+          			for(var j = 0; j <= 2; ++j){
+            				temp = (j<2) ? (colors[i][j]+",").toString() : colors[i][j].toString();
+            				tempString += temp;
+          			}
+          			colorsInStringArray.push("rgb("+tempString+")");
+        		}
+      		}
+      		console.log("Color Result:",colorsInStringArray);
+      		// Color Result: ["rgb(254, 254, 254)", "rgb(2, 138, 14)", "rgb(4, 171, 21)"]
+      		return colorsInStringArray;
+      	});
 
 ## Algorithm
 
