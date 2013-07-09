@@ -48,7 +48,19 @@ The algorithm is simple.
 ## Limitations
 
 Images are loaded through `canvas`, therefore we are limited to the same origin rule. In the last.fm example, a simple image proxy is included to bypass the issue.
-	
+
+## Using images with CORS headers
+
+If you want to use images from other domains (eg. asset domains), pass along `{enableCORS: true}` as a second argument to the new instance of `AlbumColors`. 
+AlbumColors with CORS support enabled will not work in IE9 since it does not support CORS headers for images (only XDomainRequest for XHR requests). 
+
+Example with `enableCORS` set to `true`:
+
+	new AlbumColors(url_to_image, {enableCORS: true});
+
+Don't forget: Make sure you have set the right headers on the image you are trying to fetch. 
+[More info](http://enable-cors.org/server.html) on setting the right headers for using CORS.
+
 ## License
 
 [University of Illinois / NCSA](http://opensource.org/licenses/NCSA)
