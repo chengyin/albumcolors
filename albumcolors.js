@@ -78,7 +78,8 @@
 	 * A Class for the to wrap image,
 	 * used for counting raw color pixels
 	 */
-	AlbumImage = function(url) {
+	AlbumImage = function(url, options) {
+		this.options = options;
 		this.url = url;
 	};
 
@@ -86,6 +87,10 @@
 		var that = this;
 
 		this.image = new Image();
+
+		if (this.options.enableCORS) {
+			this.image.crossOrigin = "anonymous";
+		}
 
 		this.image.onload = function() {
 			if (callback) {
@@ -143,9 +148,10 @@
 	 * AlbumColors
 	 * Generate pallete among dominating colors
 	 */
-	AlbumColors = function(imageUrl) {
+	AlbumColors = function(imageUrl, options) {
+		this.options = options || {};
 		this.imageUrl = imageUrl;
-		this.image = new AlbumImage(imageUrl);
+		this.image = new AlbumImage(imageUrl, this.options);
 	};
 
 	AlbumColors.prototype.getColors = function(callback) {

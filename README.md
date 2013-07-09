@@ -51,12 +51,14 @@ Images are loaded through `canvas`, therefore we are limited to the same origin 
 
 ## Using images with CORS headers
 
-If you want to use images from other domains (eg. asset domains), you can still use AlbumColors.js, but with one minor addition to the code. 
-You will need to add the following line to the `AlbumImage.prototype.fetch` function, right after the `new Image()`:
+If you want to use images from other domains (eg. asset domains), pass along `{enableCORS: true}` as a second argument to the new instance of `AlbumColors`. 
+AlbumColors with CORS support enabled will not work in IE9 since it does not support CORS headers for images (only XDomainRequest for XHR requests). 
 
-	this.image.crossOrigin = "anonymous";
+Example with `enableCORS` set to `true`:
 
-Also make sure you have set the right headers on the image you are trying to fetch. 
+	new AlbumColors(url_to_image, {enableCORS: true});
+
+Don't forget: Make sure you have set the right headers on the image you are trying to fetch. 
 [More info](http://enable-cors.org/server.html) on setting the right headers for using CORS.
 
 ## License
